@@ -1,13 +1,8 @@
 const express = require('express');
+// if u are picking an index.js file it's not necessary passig the complete path.
+const routes = require('./routes');
 
 const app = express();
-
-app.use(express.json());
-
-app.get('/teste', (req, res) => {
-  res
-    .status(200)
-    .send({ mensagem: 'boas-vindas à API' });
-});
+routes(app);
 
 module.exports = app;
